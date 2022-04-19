@@ -15,27 +15,24 @@ public class BidderDAOImpl implements BidderDAO {
 	@Autowired
 	SessionFactory sessionFactory;
 
-	@Override
-	public void addTeam(Bidder team) {
+	public void addBidder(Bidder bidder) {
 		// TODO Auto-generated method stub
 			Session session=sessionFactory.openSession();
 			session.getTransaction().begin();
-			session.save(team);
+			session.save(bidder);
 			session.flush();
 			session.getTransaction().commit();
 			session.close();
 		
 	}
 
-	@Override
-	public Bidder findteam(int id) {
+	public Bidder findbidder(int id) {
 			Session session = sessionFactory.openSession();
 			Bidder bidder = session.get(Bidder.class, id); 
 			return bidder;
 	}
 
-	@Override
-	public List<Bidder> findAllTeam() {
+	public List<Bidder> findAllbidder() {
 		// TODO Auto-generated method stub
 			Session session = sessionFactory.openSession();
 			@SuppressWarnings("unchecked")
@@ -43,28 +40,56 @@ public class BidderDAOImpl implements BidderDAO {
 			return bidder;
 	}
 
-	@Override
-	public boolean updateTeam(Bidder team) {
+	public boolean updateBidder(Bidder bidder) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		session.getTransaction().begin();
-		session.update(team);
+		session.update(bidder);
 		session.flush();
 		session.getTransaction().commit();
 		session.close();
 		return true;
 	}
 
-	@Override
-	public boolean deleteTeam(int id) {
+	public boolean deleteBidder(int id) {
 			Session session = sessionFactory.openSession();
-			session.getTransaction().begin();
 			Bidder bidder=session.find(Bidder.class,id);
+			session.getTransaction().begin();
 			session.delete(bidder);
 			session.flush();
 			session.getTransaction().commit();
 			session.close();
 			return true;
+	}
+
+	@Override
+	public void addTeam(Bidder bidder) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Bidder findteam(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Bidder> findAllTeam() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updateTeam(Bidder team) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteTeam(int id) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	

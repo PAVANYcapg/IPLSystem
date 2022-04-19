@@ -3,6 +3,7 @@ package com.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -10,8 +11,8 @@ public class Bidder {
 	
 	@Id
 	@GeneratedValue
-	
 	private int bidderId;
+	
 	@NotNull(message="userName cannot be null")
 	private String userName;
 	
@@ -26,7 +27,7 @@ public class Bidder {
 
 	@NotNull(message="phoneNo cannot be null")
 	private String phoneNo;
-	
+
 	public Bidder() {}
 
 	public int getBidderId() {
