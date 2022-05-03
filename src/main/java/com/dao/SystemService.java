@@ -14,23 +14,23 @@ public class SystemService {
 	@Autowired
 	SystemDAO systemdaoimpl;
 	
-	public void add(System team) {
-		systemdaoimpl.addTeam(team);
+	public void addSystem(System system) {
+		systemdaoimpl.addSystem(system);
 	}
 	
-	public System findTeam(int id) {
-		return systemdaoimpl.findteam(id);
+	public System findSystem(int id) {
+		return systemdaoimpl.findSystem(id);
 	}
 	
-	public List<System> findAllTeam() {
-		return systemdaoimpl.findAllTeam();
+	public List<System> findAllSystem() {
+		return systemdaoimpl.findAllSystem();
 	}
 	
-	public boolean update(System team) {
-		return systemdaoimpl.updateTeam(team);
+	public boolean updateSystem (System team) {
+		return systemdaoimpl.updateSystem(team);
 	}
 	
-	public boolean delete(int id) {
-		return systemdaoimpl.deleteTeam(id);
+	public boolean deleteSystem(int id) {
+		return systemdaoimpl.deleteSystem(id);
 	}
 }

@@ -9,9 +9,9 @@ import com.model.System;
 @Repository
 public interface SystemDAO {
 
-	public void addTeam(System team);
-	public System findteam(int id);
-	public List<System> findAllTeam();
-	public boolean updateTeam(System team);
-	public boolean deleteTeam(int id);
+	public void addSystem(System system);
+	public System findSystem(int id);
+	public List<System> findAllSystem();
+	public boolean updateSystem(System system);
+	public boolean deleteSystem(int id);
 }

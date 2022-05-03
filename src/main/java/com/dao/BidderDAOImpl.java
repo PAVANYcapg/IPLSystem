@@ -26,7 +26,7 @@ public class BidderDAOImpl implements BidderDAO {
 	}
 
 	@Override
-	public Bidder findbidder(int id) {
+	public Bidder findBidder(int id) {
 			Session session = sessionFactory.openSession();
 			Bidder bidder = session.get(Bidder.class, id); 
 			return bidder;

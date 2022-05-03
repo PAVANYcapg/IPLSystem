@@ -14,23 +14,23 @@ public class TeamService {
 	@Autowired
 	TeamDAO teamimpl;
 	
-	public void add(Team team) {
+	public void addTeam(Team team) {
 		teamimpl.addTeam(team);
 	}
 	
-	public Team findItem(int id) {
-		return teamimpl.findteam(id);
+	public Team findTeam(int id) {
+		return teamimpl.findTeam(id);
 	}
 	
 	public List<Team> findAllTeam() {
 		return teamimpl.findAllTeam();
 	}
 	
-	public boolean update(Team team) {
+	public boolean updateTeam(Team team) {
 		return teamimpl.updateTeam(team);
 	}
 	
-	public boolean delete(int id) {
+	public boolean deleteTeam(int id) {
 		return teamimpl.deleteTeam(id);
 	}
 }

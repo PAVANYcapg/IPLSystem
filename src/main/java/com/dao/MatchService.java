@@ -12,7 +12,7 @@ public class MatchService {
 		@Autowired
 		MatchDAO matchdaoimpl;
 		
-		public void add(Match match) {
+		public void addMatch(Match match) {
 			matchdaoimpl.addMatch(match);
 		}
 		
@@ -24,11 +24,11 @@ public class MatchService {
 			return matchdaoimpl.findAllMatch();
 		}
 		
-		public boolean update(Match match) {
+		public boolean updateMatch(Match match) {
 			return matchdaoimpl.updateMatch(match);
 		}
 		
-		public boolean delete(int id) {
+		public boolean deleteMatch(int id) {
 			return matchdaoimpl.deleteMatch(id);
 		}
 }

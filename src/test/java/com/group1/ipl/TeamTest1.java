@@ -26,9 +26,9 @@ class TeamTest1 {
 		team.setPoints(50);
 		team.setStatistics("GOOD");
 		team.setRanking(1);
-		teamservice.add(team);
+		teamservice.addTeam(team);
 		
-		Team team_to_be_tested=teamservice.findItem(team.getTeamid());
+		Team team_to_be_tested=teamservice.findTeam(team.getTeamid());
 		Assert.assertEquals("Chithira",team_to_be_tested.getTname());
 		Assert.assertEquals(50, team_to_be_tested.getPoints());
 		Assert.assertEquals("GOOD", team_to_be_tested.getStatistics());
@@ -36,15 +36,15 @@ class TeamTest1 {
 	}
 
 	@Test
-	void testFindItem() {
+	void testFindTeam() {
 		Team team1 = new Team();
 		team1.setTname("P Nair");
 		team1.setPoints(100);
 		team1.setStatistics("GOOD");
 		team1.setRanking(2);
-		teamservice.add(team1);
+		teamservice.addTeam(team1);
 		
-		Team team_to_be_tested=teamservice.findItem(team1.getTeamid());
+		Team team_to_be_tested=teamservice.findTeam(team1.getTeamid());
 		Assert.assertEquals("P Nair",team_to_be_tested.getTname());
 		Assert.assertEquals(100, team_to_be_tested.getPoints());
 		Assert.assertEquals("GOOD", team_to_be_tested.getStatistics());
@@ -59,14 +59,14 @@ class TeamTest1 {
 		team2.setPoints(150);
 		team2.setStatistics("GOOD");
 		team2.setRanking(3);
-		teamservice.add(team2);
+		teamservice.addTeam(team2);
 		
 		Team team3 = new Team();
 		team3.setTname("Athira");
 		team3.setPoints(200);
 		team3.setStatistics("GOOD");
 		team3.setRanking(4);
-		teamservice.add(team3);
+		teamservice.addTeam(team3);
 		
 		List<Team> teamlist=teamservice.findAllTeam();
 		
@@ -80,18 +80,18 @@ class TeamTest1 {
 		team4.setPoints(180);
 		team4.setStatistics("GOOD");
 		team4.setRanking(5);
-		teamservice.add(team4);
+		teamservice.addTeam(team4);
 		team4.setTeamid(1);
 		
-		Assert.assertEquals(true,teamservice.update(team4 ));
+		Assert.assertEquals(true,teamservice.updateTeam(team4 ));
 	}
 
 	@Test
 	void testDelete() {
-		Team team = teamservice.findItem(2);
-		teamservice.delete(team.getTeamid());
+		Team team = teamservice.findTeam(2);
+		teamservice.deleteTeam(team.getTeamid());
 		
-		Team team5 =teamservice.findItem(2);
+		Team team5 =teamservice.findTeam(2);
 		Assert.assertNull(team5);
 	}
 

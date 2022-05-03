@@ -9,7 +9,7 @@ import com.model.Bidder;
 public interface BidderDAO {
 	
 	public void addBidder(Bidder bidder);
-	public Bidder findbidder(int id);
+	public Bidder findBidder(int id);
 	public List<Bidder> findAllBidder();
 	public boolean updateBidder(Bidder bidder);
 	public boolean deleteBidder(int id);

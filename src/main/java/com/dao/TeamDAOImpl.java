@@ -27,7 +27,7 @@ public class TeamDAOImpl implements TeamDAO {
 	}
 
 	@Override
-	public Team findteam(int id) {
+	public Team findTeam(int id) {
 		Session session = sessionFactory.openSession();
 		Team team = session.get(Team.class, id); 
 		return team;

@@ -10,7 +10,7 @@ import com.model.Team;
 public interface TeamDAO {
 	
 	public void addTeam(Team team);
-	public Team findteam(int id);
+	public Team findTeam(int id);
 	public List<Team> findAllTeam();
 	public boolean updateTeam(Team team);
 	public boolean deleteTeam(int id);

@@ -24,7 +24,7 @@ public class MatchController {
 	
 	@PostMapping("/addmatch")
 	public ResponseEntity<?> addMatch(@RequestBody Match match) {
-		matchservice.add(match);
+		matchservice.addMatch(match);
 		return ResponseEntity.status(HttpStatus.OK).body("Match added succesfully");
 	}
 	
@@ -35,7 +35,7 @@ public class MatchController {
 		if(match==null) {
 			throw new DeleteMatchException(id);
 		}
-		matchservice.delete(id);
+		matchservice.deleteMatch(id);
 		return ResponseEntity.ok("Match deleted succesfully");
 	}
 	
@@ -46,7 +46,7 @@ public class MatchController {
 		if(match1==null) {
 			throw new UpdateMatchException();
 		}
-		matchservice.update(match1);
+		matchservice.updateMatch(match1);
 		return ResponseEntity.ok("Match updated succesfully");
 	}
 	
