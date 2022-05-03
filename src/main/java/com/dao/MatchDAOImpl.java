@@ -6,7 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import com.model.Match;
 
 @Component
@@ -16,7 +15,7 @@ public class MatchDAOImpl implements MatchDAO {
 	SessionFactory sessionFactory;
 
 	@Override
-	public void addTeam(Match match) {
+	public void addMatch(Match match) {
 			Session session=sessionFactory.openSession();
 			session.getTransaction().begin();
 			session.save(match);
@@ -27,7 +26,7 @@ public class MatchDAOImpl implements MatchDAO {
 	}
 
 	@Override
-	public Match findteam(int id) {
+	public Match findMatch(int id) {
 			Session session = sessionFactory.openSession();
 			Match match = session.get(Match.class, id); 
 			return match;
@@ -35,14 +34,14 @@ public class MatchDAOImpl implements MatchDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Match> findAllTeam() {
+	public List<Match> findAllMatch() {
 			Session session = sessionFactory.openSession();
 			List<Match> match=session.createQuery("select i from Match i").list();
 			return match;
 	}
 
 	@Override
-	public boolean updateTeam(Match match) {
+	public boolean updateMatch(Match match) {
 		Session session = sessionFactory.openSession();
 		session.getTransaction().begin();
 		session.update(match);
@@ -53,7 +52,7 @@ public class MatchDAOImpl implements MatchDAO {
 	}
 
 	@Override
-	public boolean deleteTeam(int id) {
+	public boolean deleteMatch(int id) {
 			Session session = sessionFactory.openSession();
 			Match match=session.find(Match.class, id);
 			session.getTransaction().begin();
@@ -63,6 +62,4 @@ public class MatchDAOImpl implements MatchDAO {
 			session.close();
 			return true;
 	}
-	
-	
 }

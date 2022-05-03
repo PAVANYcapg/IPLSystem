@@ -21,9 +21,9 @@ class ResultTest1 {
 		result.setFirstTeam("LSG");
 		result.setSecondTeam("CSK");
 		result.setThirdTeam("MI");
-		resultservice.add(result);
+		resultservice.addResult(result);
 		
-		Result result_to_be_tested = resultservice.find(result.getResultId());
+		Result result_to_be_tested = resultservice.findResult(result.getResultId());
 		Assert.assertEquals("LSG", result_to_be_tested.getFirstTeam());
 		Assert.assertEquals("CSK", result_to_be_tested.getSecondTeam());
 		Assert.assertEquals("MI", result_to_be_tested.getThirdTeam());
@@ -35,9 +35,9 @@ class ResultTest1 {
 		result.setFirstTeam("KKR");
 		result.setSecondTeam("DC");
 		result.setThirdTeam("RR");
-		resultservice.add(result);
+		resultservice.addResult(result);
 		
-		Result result_to_be_tested = resultservice.find(result.getResultId()); 
+		Result result_to_be_tested = resultservice.findResult(result.getResultId()); 
 		Assert.assertEquals("KKR", result_to_be_tested.getFirstTeam());
 		Assert.assertEquals("DC", result_to_be_tested.getSecondTeam());
 		Assert.assertEquals("RR", result_to_be_tested.getThirdTeam());
@@ -49,9 +49,9 @@ class ResultTest1 {
 		result.setFirstTeam("PQR");
 		result.setSecondTeam("PWI");
 		result.setThirdTeam("KTK");
-		resultservice.add(result);
+		resultservice.addResult(result);
 		
-		List<Result> add =  resultservice.findAll();
+		List<Result> add =  resultservice.findAllResult();
 		Assert.assertEquals(add.get(1).getFirstTeam(),"PQR");
 		Assert.assertEquals(add.get(1).getSecondTeam(),"PWI");
 		Assert.assertEquals(add.get(1).getThirdTeam(),"KTK");
@@ -64,16 +64,16 @@ class ResultTest1 {
 		result.setFirstTeam("SRH");
 		result.setSecondTeam("MNO");
 		result.setThirdTeam("STU");
-		resultservice.add(result);
+		resultservice.addResult(result);
 		result.setResultId(4);
 
-		Assert.assertEquals(true, resultservice.update(result));
+		Assert.assertEquals(true, resultservice.updateResult(result));
 	}
 
 	@Test
 	void testDelete() {
-		resultservice.delete(2);
-		Result result1 = resultservice.find(2);
+		resultservice.deleteResult(2);
+		Result result1 = resultservice.findResult(2);
 
 		Assert.assertNull(result1);
 		

@@ -13,23 +13,23 @@ public class ResultService {
 @Autowired
 ResultDAO resultdaoimpl;
 	
-	public void add(Result result) {
+	public void addResult(Result result) {
 		resultdaoimpl.addResult(result);
 	}
 	
-	public Result find(int id) {
-		return resultdaoimpl.findresult(id);
+	public Result findResult(int id) {
+		return resultdaoimpl.findResult(id);
 	}
 	
-	public List<Result> findAll() {
+	public List<Result> findAllResult() {
 		return resultdaoimpl.findAllResult();
 	}
 	
-	public boolean update(Result result) {
+	public boolean updateResult(Result result) {
 		return resultdaoimpl.updateResult(result);
 	}
 	
-	public boolean delete(int id) {
+	public boolean deleteResult(int id) {
 		return resultdaoimpl.deleteResult(id);
 	}
 }

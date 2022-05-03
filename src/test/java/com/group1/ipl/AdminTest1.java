@@ -20,9 +20,9 @@ class AdminTest1 {
 		Admin admin = new Admin();
 		admin.setUsername("Nihal");
 		admin.setPassword("@123");
-		adminservice.add(admin);
+		adminservice.addAdmin(admin);
 		
-		Admin admin_to_be_tested = adminservice.find(admin.getId());
+		Admin admin_to_be_tested = adminservice.findAdmin(admin.getId());
 		Assert.assertEquals("Nihal", admin_to_be_tested.getUsername());
 		Assert.assertEquals("@123", admin_to_be_tested.getPassword());
 	}
@@ -32,9 +32,9 @@ class AdminTest1 {
 		Admin admin = new Admin();
 		admin.setUsername("Pradeep");
 		admin.setPassword("@1234");
-		adminservice.add(admin);
+		adminservice.addAdmin(admin);
 		
-		Admin admin_to_be_tested = adminservice.find(admin.getId());
+		Admin admin_to_be_tested = adminservice.findAdmin(admin.getId());
 		Assert.assertEquals("Pradeep", admin_to_be_tested.getUsername());
 		Assert.assertEquals("@1234", admin_to_be_tested.getPassword());
      }
@@ -44,9 +44,9 @@ class AdminTest1 {
 		Admin admin = new Admin();
 		admin.setUsername("Ranjan");
 		admin.setPassword("@12345");
-		adminservice.add(admin);
+		adminservice.addAdmin(admin);
 		
-		List<Admin> add =  adminservice.findAll();
+		List<Admin> add =  adminservice.findAllAdmin();
 		Assert.assertEquals("Ranjan", add.get(1).getUsername());
 		
 	}
@@ -58,24 +58,23 @@ class AdminTest1 {
 		Admin admin=new Admin();
 		admin.setUsername("Chitira");
 		admin .setPassword("#20101");
-		adminservice.add(admin);
-		adminservice.update(admin);
-		Assert.assertEquals(true, adminservice.update(admin));
+		adminservice.addAdmin(admin);
+		adminservice.updateAdmin(admin);
+		Assert.assertEquals(true, adminservice.updateAdmin(admin));
 	}
 
 	@Test
 	void testDelete() {
-		adminservice.delete(2);
-		Admin admin1 = adminservice.find(2);
+		adminservice.deleteAdmin(2);
+		Admin admin1 = adminservice.findAdmin(2);
 
 		Assert.assertNull(admin1);
 		
 	}
 
-	@SuppressWarnings("unused")
-	private Object Admin(int i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	//@SuppressWarnings("unused")
+	//private Object Admin(int i) {
+	//	return null;
+	//}
 
 }

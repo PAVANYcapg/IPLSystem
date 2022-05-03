@@ -4,9 +4,6 @@ package com.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-
-
-
 import com.model.Match;
 
 @Service
@@ -16,28 +13,22 @@ public class MatchService {
 		MatchDAO matchdaoimpl;
 		
 		public void add(Match match) {
-			matchdaoimpl.addTeam(match);
+			matchdaoimpl.addMatch(match);
 		}
 		
-		public Match findItem(int id) {
-			return matchdaoimpl.findteam(id);
+		public Match findMatch(int id) {
+			return matchdaoimpl.findMatch(id);
 		}
 		
-		public List<Match> findAllTeam() {
-			return matchdaoimpl.findAllTeam();
+		public List<Match> findAllMatch() {
+			return matchdaoimpl.findAllMatch();
 		}
 		
 		public boolean update(Match match) {
-			return matchdaoimpl.updateTeam(match);
+			return matchdaoimpl.updateMatch(match);
 		}
 		
 		public boolean delete(int id) {
-			return matchdaoimpl.deleteTeam(id);
+			return matchdaoimpl.deleteMatch(id);
 		}
-
-		public Match findMatch(int id) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
 }

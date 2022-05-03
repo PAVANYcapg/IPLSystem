@@ -24,45 +24,45 @@ public class AdminController {
 	
 	@PostMapping("/addadmin")
 	public ResponseEntity<?> addAdmin(@RequestBody Admin admin) {
-		adminservice.add(admin);
+		adminservice.addAdmin(admin);
 		return ResponseEntity.status(HttpStatus.OK).body("Admin added succesfully");
 	}
 	
 	
 	@DeleteMapping("/deleteadmin/{id}")
-	public ResponseEntity<?> deleteItem(@PathVariable int id) throws DeleteAdminException {
-		Admin admin=adminservice.find(id);
+	public ResponseEntity<?> deleteAdmin(@PathVariable int id) throws DeleteAdminException {
+		Admin admin=adminservice.findAdmin(id);
 		if(admin==null) {
 			throw new DeleteAdminException(id);
 		}
-		adminservice.delete(id);
+		adminservice.deleteAdmin(id);
 		return ResponseEntity.ok("Admin deleted succesfully");
 	}
 	
 	
 	@PatchMapping("/updateadmin")
-	public ResponseEntity<?> updateTeam(@RequestBody Admin admin) throws UpdateAdminException{
-		Admin admin1=adminservice.find(admin.getId());
+	public ResponseEntity<?> updateAdmin(@RequestBody Admin admin) throws UpdateAdminException{
+		Admin admin1=adminservice.findAdmin(admin.getId());
 		if(admin1==null) {
 			throw new UpdateAdminException();
 		}
-		adminservice.update(admin);
-		return ResponseEntity.ok("Team updated succesfully");
+		adminservice.updateAdmin(admin);
+		return ResponseEntity.ok("Admin updated succesfully");
 	}
 	
 	@GetMapping("/findadmin/{id}")
-	public ResponseEntity<?> findTeam(@PathVariable int id)throws FindAdminException{
+	public ResponseEntity<?> findAdmin(@PathVariable int id)throws FindAdminException{
 		
-		Admin admin2=adminservice.find(id);
+		Admin admin2=adminservice.findAdmin(id);
 		if(admin2==null) {
 			throw new FindAdminException();
 		}
-		adminservice.find(id);
+		adminservice.findAdmin(id);
 		return ResponseEntity.ok("element find succesfully");
 	}
 	
 	@GetMapping("/findalladmin")
-	public List<Admin> findAllTeam(){
-		return adminservice.findAll();	
+	public List<Admin> findAllAdmin(){
+		return adminservice.findAllAdmin();	
 	}
 }

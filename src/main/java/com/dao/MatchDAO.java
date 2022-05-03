@@ -9,10 +9,10 @@ import com.model.Match;
 @Repository
 public interface MatchDAO {
 
-	public void addTeam(Match match);
-	public Match findteam(int id);
-	public List<Match> findAllTeam();
-	public boolean updateTeam(Match team);
-	public boolean deleteTeam(int id);
+	public void addMatch(Match match);
+	public Match findMatch(int id);
+	public List<Match> findAllMatch();
+	public boolean updateMatch(Match match);
+	public boolean deleteMatch(int id);
 	
 }

@@ -12,28 +12,27 @@ public class AdminService {
 @Autowired
 AdminDAO admindao;
 
-	public void add(Admin admin) {
+	public void addAdmin(Admin admin) {
 	admindao.addAdmin(admin);
 	}
 
-	public Admin find(int id) {
-		return admindao.findadmin(id);
+	public Admin findAdmin(int id) {
+		return admindao.findAdmin(id);
 	}
 	
-	public List<Admin> findAll() {
+	public List<Admin> findAllAdmin() {
 		return admindao.findAllAdmin();
 	}
 	
-	public boolean update(Admin admin) {
+	public boolean updateAdmin(Admin admin) {
 		return admindao.updateAdmin(admin);
 	}
 	
-	public boolean delete(int id) {
+	public boolean deleteAdmin(int id) {
 		return admindao.deleteAdmin(id);
 	}
 
 	public boolean checkAdmin(String username, String password) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }

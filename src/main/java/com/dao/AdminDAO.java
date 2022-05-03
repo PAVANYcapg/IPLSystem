@@ -8,9 +8,8 @@ import com.model.Admin;
 @Repository
 public interface AdminDAO {
 	public void addAdmin(Admin admin);
-	public Admin findadmin(int id);
+	public Admin findAdmin(int id);
 	public List<Admin> findAllAdmin();
 	public boolean updateAdmin(Admin admin);
 	public boolean deleteAdmin(int id);	
-
 }

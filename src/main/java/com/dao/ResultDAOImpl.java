@@ -27,7 +27,7 @@ public class ResultDAOImpl implements ResultDAO {
 	}
 
 	@Override
-	public Result findresult(int id) {
+	public Result findResult(int id) {
 		Session session = sessionFactory.openSession();
 		Result result = session.get(Result.class, id); 
 		return result;

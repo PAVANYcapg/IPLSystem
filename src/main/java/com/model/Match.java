@@ -24,26 +24,19 @@ public class Match {
 	@ManyToOne
 	private Admin admin;
 	
-	
 	@ManyToOne
 	private Team team;
 	
 	public Match() {
-}
-
-	
+		}
 
 	public int getMatchid() {
 		return matchid;
 	}
 
-
-
 	public void setMatchid(int matchid) {
 		this.matchid = matchid;
 	}
-
-
 
 	public String getTeamOne() {
 		return teamOne;
@@ -93,8 +86,6 @@ public class Match {
 		this.admin = admin;
 	}
 
-
-
 	public Team getTeam() {
 		return team;
 	}
@@ -102,7 +93,5 @@ public class Match {
 	public void setTeam(Team team) {
 		this.team = team;
 	}
-
 	
-
 }

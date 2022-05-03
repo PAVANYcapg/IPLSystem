@@ -10,7 +10,7 @@ import com.model.Result;
 public interface ResultDAO {
 
 	public void addResult(Result result);
-	public Result findresult(int id);
+	public Result findResult(int id);
 	public List<Result> findAllResult();
 	public boolean updateResult(Result result);
 	public boolean deleteResult(int id);

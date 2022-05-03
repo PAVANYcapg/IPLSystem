@@ -24,7 +24,7 @@ public class AdminDaoImpl implements  AdminDAO{
 		session.close();
 	}
 	@Override
-	public Admin findadmin(int id) {
+	public Admin findAdmin(int id) {
 		Session session = sessionfactory.openSession();
 		Admin admin = session.find(Admin.class, id);
 		return admin;
